@@ -1,0 +1,37 @@
+name: Update display news data
+
+on:
+  schedule:
+    # UTC 기준. 0시/4시/8시/12시/16시/20시 UTC = KST 09/13/17/21/01/05시
+    - cron: "0 */4 * * *"
+  workflow_dispatch: {}   # Actions 탭에서 수동 실행 가능
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        run: python scripts/scrape.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "display-news-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/news.json
+          git diff --cached --quiet && echo "변경 없음 — 커밋 생략" && exit 0
+          git commit -m "chore: update news data ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+          git push

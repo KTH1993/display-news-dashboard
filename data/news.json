@@ -1,0 +1,131 @@
+{
+  "generated_at": "2026-08-06T09:00:00+09:00",
+  "generated_at_display": "2026.08.06 09:00 KST",
+  "sources": {
+    "ubi": {
+      "name": "유비리서치넷",
+      "url": "https://ubiresearchnet.com/",
+      "items": [
+        {
+          "title": "BOE·TCL, 2026년 상반기 이익 급증 전망…Tianma는 적자 전환",
+          "url": "https://ubiresearchnet.com/boe-tcl-tianma-2026-h1-earnings/",
+          "date": "2026.08.04",
+          "tag": "포커스온",
+          "desc": "BOE·TCL Technology는 대형 LCD 수익성 개선으로 이익 급증 예상, Tianma는 모바일 OLED 부담으로 적자 전환 전망."
+        },
+        {
+          "title": "LG디스플레이의 탠덤 OLED 개발 동향",
+          "url": "https://ubiresearchnet.com/lg-display-tandem-oled-development-trends-focus-pro/",
+          "date": "2026.08.03",
+          "tag": "포커스 Pro",
+          "desc": "최영석 CTO, 디스플레이 비즈니스 포럼 2026 기조연설 — 탠덤 OLED를 AI 시대 성장 핵심 구조로 제시."
+        },
+        {
+          "title": "K-Display 2026: PSA, 정밀 인쇄 기술 공개",
+          "url": "https://ubiresearchnet.com/psa-precision-pad-printing-k-display-2026/",
+          "date": "2026.08.03",
+          "tag": "포커스온",
+          "desc": "PSA, 패드인쇄 장비·잉크·자동화 설비를 아우르는 엣지 인쇄 솔루션 전시."
+        },
+        {
+          "title": "K-Display 2026: MEMSLUX, 차세대 광학 솔루션 공개",
+          "url": "https://ubiresearchnet.com/memslux-optical-solutions-k-display-2026/",
+          "date": "2026.07.31",
+          "tag": "포커스온",
+          "desc": "KAIST 발 기술기업 MEMSLUX, 3D 디퓨저 리소그래피 기반 초정밀 광학 구조 선보임."
+        },
+        {
+          "title": "CETC, K-Display 2026서 디스플레이 후공정 자동화 경쟁력 소개",
+          "url": "https://ubiresearchnet.com/cetc-display-back-end-automation-k-display-2026/",
+          "date": "2026.07.30",
+          "tag": "포커스온",
+          "desc": "중국전자과기그룹 계열 CETC 풍화, LCD·OLED용 커팅·POL 공정 자동화 장비 전시."
+        }
+      ]
+    },
+    "kdia": {
+      "name": "KDIA 일일뉴스",
+      "url": "https://www.kdia.org/bbs/bbsList.jsp?mgrId=64",
+      "items": [
+        { "title": "[매일경제] \"대놓고 베끼는 중국, 막기가 버겁네요\"...OLED 시장은 특허전쟁 중", "url": "https://n.news.naver.com/mnews/article/009/0005716663?sid=101", "date": "2026.08.05", "tag": "", "desc": "" },
+        { "title": "[위키리크스한국] 삼성디스플레이, 8.6세대 IT OLED 양산 본궤도…\"4.1조 투자\" 결실", "url": "http://www.wikileaks-kr.org/news/articleView.html?idxno=190568", "date": "2026.08.05", "tag": "", "desc": "" },
+        { "title": "[비즈니스포스트] 정철동 LG디스플레이 모바일 OLED로 하반기 실적 반등 시동", "url": "https://www.businesspost.co.kr/BP?command=article_view&num=443902", "date": "2026.08.05", "tag": "", "desc": "" },
+        { "title": "[ZDNET Korea] 삼성D, 차세대 폴더블 OLED에 \"중앙 얇게 식각 UTG\" 적용 추진", "url": "https://n.news.naver.com/mnews/article/092/0002432990?sid=105", "date": "2026.08.05", "tag": "", "desc": "" },
+        { "title": "[전자신문] CSOT, \"잉크젯 OLED\"로 모니터·노트북 공략 본격화…MSI 모니터 공개", "url": "https://n.news.naver.com/mnews/article/030/0003454071?sid=105", "date": "2026.08.05", "tag": "", "desc": "" },
+        { "title": "[매일경제] 中공장 인수 … 車 디스플레이 원스톱 생산", "url": "https://n.news.naver.com/mnews/article/009/0005716558?sid=101", "date": "2026.08.05", "tag": "", "desc": "" },
+        { "title": "[테크월드] 옴디아 \"공급측 압박에 시작된 시장 재편, 2분기 스마트폰 출하량 6% 감소\"", "url": "https://www.epnc.co.kr/news/articleView.html?idxno=405141", "date": "2026.08.05", "tag": "", "desc": "" },
+        { "title": "[NEWS1] 애플 \"폴더블 아이폰\" 9월 등판…워치·에어팟 등 웨어러블도", "url": "https://n.news.naver.com/mnews/article/421/0009097373?sid=105", "date": "2026.08.05", "tag": "", "desc": "" },
+        { "title": "[ZDNET Korea] \"20주년 아이폰, 화면 더 커진다…6.4인치 개발 중\"", "url": "https://n.news.naver.com/mnews/article/092/0002433022?sid=105", "date": "2026.08.05", "tag": "", "desc": "" },
+        { "title": "[디지털투데이] 주름 사라지고 수요 3배로…애플 폴더블 아이폰, 출시 타이밍 맞췄다", "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=689938", "date": "2026.08.05", "tag": "", "desc": "" }
+      ]
+    },
+    "samsung": {
+      "name": "삼성디스플레이 뉴스룸",
+      "url": "https://news.samsungdisplay.com/",
+      "items": [
+        {
+          "title": "삼성D, 차세대 폼팩터부터 미래차∙AI∙게이밍 아우르는 OLED 혁신 선보인다",
+          "url": "https://news.samsungdisplay.com/34500",
+          "date": "",
+          "tag": "제품기술",
+          "desc": "K-디스플레이 2026 참가 — HIAA 멀티홀 디스플레이, CID 세로형 슬라이더블 등 차량 인테리어용 폼팩터 기술 공개."
+        },
+        {
+          "title": "'트루블랙(True Black) 1400' 지원 노트북용 탠덤 OLED 본격 공급",
+          "url": "https://news.samsungdisplay.com/34499",
+          "date": "",
+          "tag": "제품기술",
+          "desc": "VESA DisplayHDR™ True Black 1400 인증 기준 충족, 글로벌 PC 제조사向 공급 확대 계획."
+        },
+        {
+          "title": "[디스플레이 용어.zip] EP.44 : 액티브 에어리어(Active Area)",
+          "url": "https://news.samsungdisplay.com/34509",
+          "date": "",
+          "tag": "디스플레이 용어",
+          "desc": "디스플레이 크기 산정 기준이 되는 유효 표시 영역 개념을 설명하는 용어 시리즈."
+        }
+      ]
+    },
+    "lg": {
+      "name": "LG디스플레이",
+      "url": "https://www.lgdisplay.com/kor/company/media-center/latest-news",
+      "items": [
+        {
+          "title": "[국민성장펀드 지원 기업 선정] 대체불가 OLED 기술에 3조원 승부수",
+          "url": "https://www.lgdisplay.com/kor/company/media-center/latest-news?contentId=5563",
+          "date": "2026.07.30",
+          "tag": "PR",
+          "desc": "국민성장펀드 1.5조원 + 자체 재원 1.5조원, 총 3조원을 차세대 OLED 기술·생산 인프라에 투입."
+        },
+        {
+          "title": "[2026년 상반기 실적발표] 매출 11조 1,461억원, 영업이익 390억원",
+          "url": "https://www.lgdisplay.com/kor/company/media-center/latest-news?contentId=5558",
+          "date": "2026.07.22",
+          "tag": "PR",
+          "desc": "전년 상반기 영업손실에서 흑자 전환. 2분기는 계절적 비수기와 일회성 비용으로 영업손실 기록."
+        },
+        {
+          "title": "\"OLED로 시장 차별화 가속화\" LG디스플레이, K-디스플레이 2026 참가",
+          "url": "https://www.lgdisplay.com/kor/company/media-center/latest-news?contentId=5556",
+          "date": "2026.07.22",
+          "tag": "PR",
+          "desc": "비전·홈·워크·모빌리티 4개 존 구성 — 휴머노이드용 P-OLED 국내 최초 공개."
+        },
+        {
+          "title": "\"더 빠른 화면, 더 빠른 승리\" LGD, 게이밍 OLED 모니터 성능 실험 논문 발표",
+          "url": "https://www.lgdisplay.com/kor/company/media-center/latest-news?contentId=5554",
+          "date": "2026.07.09",
+          "tag": "PR",
+          "desc": "FPS 게임 실험에서 480Hz가 60Hz 대비 히트 스코어 38% 향상 입증."
+        },
+        {
+          "title": "LG디스플레이, '2026 ESG 리포트' 발간",
+          "url": "https://www.lgdisplay.com/kor/company/media-center/latest-news?contentId=5551",
+          "date": "2026.06.30",
+          "tag": "PR",
+          "desc": "2018년 대비 온실가스 배출량 67% 감축, 에코바디스 '플래티넘' 등급 2년 연속 획득."
+        }
+      ]
+    }
+  }
+}

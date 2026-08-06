@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Display News Dashboard</title>
+<meta name="description" content="유비리서치넷 · KDIA 일일뉴스 · 삼성디스플레이 뉴스룸 · LG디스플레이 뉴스룸 통합 대시보드">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0B0E11;
+    --panel: #12161B;
+    --panel-2: #171C22;
+    --line: #232A32;
+    --text: #E8ECEF;
+    --text-dim: #8A94A0;
+    --text-faint: #545D68;
+    --r: #FF4757;
+    --g: #2ED573;
+    --b: #4D8DFF;
+    --w: #FFC048;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top left, rgba(77,141,255,0.06), transparent 45%),
+      radial-gradient(ellipse at bottom right, rgba(255,192,72,0.05), transparent 45%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Noto Sans KR', sans-serif;
+    padding: 28px 20px 60px;
+    min-height:100vh;
+  }
+  .wrap{max-width:1180px; margin:0 auto;}
+
+  header{
+    display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between;
+    gap:20px; padding-bottom:22px; margin-bottom:26px; border-bottom:1px solid var(--line);
+  }
+  .brand-eyebrow{
+    font-family:'Space Grotesk', sans-serif; font-size:11px; letter-spacing:0.22em;
+    text-transform:uppercase; color:var(--text-faint); margin-bottom:10px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .subpx-dots{display:inline-flex; gap:3px;}
+  .subpx-dots span{width:6px; height:10px; border-radius:2px; display:block;}
+  .subpx-dots .r{background:var(--r); box-shadow:0 0 6px var(--r);}
+  .subpx-dots .g{background:var(--g); box-shadow:0 0 6px var(--g);}
+  .subpx-dots .b{background:var(--b); box-shadow:0 0 6px var(--b);}
+  .subpx-dots .w{background:var(--w); box-shadow:0 0 6px var(--w);}
+  h1{
+    font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:clamp(26px,4vw,38px);
+    letter-spacing:-0.01em; line-height:1.15;
+  }
+  h1 .sub{display:block; font-size:14px; font-weight:400; color:var(--text-dim); margin-top:6px; font-family:'Noto Sans KR', sans-serif;}
+  .statbar{display:flex; gap:14px; flex-wrap:wrap;}
+  .stat{
+    font-family:'JetBrains Mono', monospace; background:var(--panel); border:1px solid var(--line);
+    border-radius:8px; padding:9px 13px; min-width:108px; cursor:default;
+  }
+  .stat.clickable{cursor:pointer; transition:border-color .15s;}
+  .stat.clickable:hover{border-color:var(--b);}
+  .stat .k{font-size:9px; letter-spacing:0.12em; color:var(--text-faint); text-transform:uppercase; margin-bottom:3px;}
+  .stat .v{font-size:14px; font-weight:700; color:var(--text);}
+
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  @media (max-width:860px){ .grid{grid-template-columns:1fr;} }
+
+  section.panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    overflow:hidden; display:flex; flex-direction:column; position:relative;
+  }
+  section.panel::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:2px;
+    background:var(--accent); box-shadow:0 0 12px var(--accent);
+  }
+  .panel-head{
+    display:flex; align-items:center; justify-content:space-between; padding:16px 18px 14px;
+    border-bottom:1px solid var(--line); background:var(--panel-2);
+  }
+  .panel-title{display:flex; align-items:center; gap:10px;}
+  .panel-title .subpx{display:flex; gap:3px;}
+  .panel-title .subpx span{width:5px; height:16px; border-radius:2px; background:var(--accent); box-shadow:0 0 8px var(--accent); opacity:0.9;}
+  .panel-title .subpx span:nth-child(2){opacity:0.55;}
+  .panel-title .subpx span:nth-child(3){opacity:0.3;}
+  .panel-title h2{font-family:'Space Grotesk', sans-serif; font-size:16px; font-weight:600; color:var(--text);}
+  .panel-title .kr-src{font-size:11px; color:var(--text-dim); margin-top:2px;}
+  .panel-head a.visit{
+    font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--text-faint); text-decoration:none;
+    border:1px solid var(--line); border-radius:6px; padding:5px 9px; white-space:nowrap;
+    transition:border-color .15s, color .15s;
+  }
+  .panel-head a.visit:hover{border-color:var(--accent); color:var(--text);}
+
+  .item-list{list-style:none; padding:6px 0;}
+  .item{padding:12px 18px; border-bottom:1px solid var(--line); display:flex; flex-direction:column; gap:5px;}
+  .item:last-child{border-bottom:none;}
+  .item a.headline{color:var(--text); text-decoration:none; font-size:14px; font-weight:500; line-height:1.5;}
+  .item a.headline:hover{color:var(--accent);}
+  .item .meta{display:flex; gap:10px; align-items:center; font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--text-faint);}
+  .item .tag{color:var(--accent); border:1px solid var(--accent); border-radius:4px; padding:1px 6px; font-size:9px;}
+  .item .desc{font-size:12px; color:var(--text-dim); line-height:1.55;}
+
+  #ubi{--accent:var(--r);} #kdia{--accent:var(--g);} #samsung{--accent:var(--b);} #lg{--accent:var(--w);}
+
+  .panel-scroll{max-height:460px; overflow-y:auto;}
+  .panel-scroll::-webkit-scrollbar{width:6px;}
+  .panel-scroll::-webkit-scrollbar-thumb{background:var(--line); border-radius:3px;}
+
+  .empty-state, .error-state{padding:24px 18px; font-size:12.5px; color:var(--text-faint); line-height:1.6;}
+  .error-state{color:var(--r);}
+
+  footer{
+    margin-top:30px; padding-top:20px; border-top:1px solid var(--line);
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;
+    font-size:11.5px; color:var(--text-faint); line-height:1.7;
+  }
+  footer a{color:var(--text-dim);}
+
+  .skeleton{padding:12px 18px;}
+  .skeleton .sk-line{height:12px; background:var(--panel-2); border-radius:4px; margin-bottom:10px; animation:pulse 1.4s ease-in-out infinite;}
+  .skeleton .sk-line:nth-child(2){width:70%;}
+  @keyframes pulse{0%,100%{opacity:.35;}50%{opacity:.7;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div>
+      <div class="brand-eyebrow">
+        <span class="subpx-dots"><span class="r"></span><span class="g"></span><span class="b"></span><span class="w"></span></span>
+        DISPLAY INDUSTRY MONITOR
+      </div>
+      <h1>디스플레이 뉴스 대시보드
+        <span class="sub">유비리서치넷 · KDIA 일일뉴스 · 삼성디스플레이 뉴스룸 · LG디스플레이 — 4개 소스 통합</span>
+      </h1>
+    </div>
+    <div class="statbar">
+      <div class="stat"><div class="k">Updated</div><div class="v" id="stat-updated">—</div></div>
+      <div class="stat"><div class="k">Sources</div><div class="v">4 CH</div></div>
+      <div class="stat clickable" id="refresh-btn"><div class="k">Action</div><div class="v">↻ Refresh</div></div>
+    </div>
+  </header>
+
+  <div class="grid">
+    <section class="panel" id="ubi">
+      <div class="panel-head">
+        <div class="panel-title">
+          <span class="subpx"><span></span><span></span><span></span></span>
+          <div><h2>UBI Research Net</h2><div class="kr-src">유비리서치넷 · 포커스온 / 포커스Pro</div></div>
+        </div>
+        <a class="visit" href="https://ubiresearchnet.com/" target="_blank" rel="noopener">SITE →</a>
+      </div>
+      <div class="panel-scroll"><ul class="item-list" id="list-ubi"><li class="skeleton"><div class="sk-line"></div><div class="sk-line"></div></li></ul></div>
+    </section>
+
+    <section class="panel" id="kdia">
+      <div class="panel-head">
+        <div class="panel-title">
+          <span class="subpx"><span></span><span></span><span></span></span>
+          <div><h2>KDIA Daily News</h2><div class="kr-src">한국디스플레이산업협회 · 일일뉴스</div></div>
+        </div>
+        <a class="visit" href="https://www.kdia.org/bbs/bbsList.jsp?mgrId=64" target="_blank" rel="noopener">SITE →</a>
+      </div>
+      <div class="panel-scroll"><ul class="item-list" id="list-kdia"><li class="skeleton"><div class="sk-line"></div><div class="sk-line"></div></li></ul></div>
+    </section>
+
+    <section class="panel" id="samsung">
+      <div class="panel-head">
+        <div class="panel-title">
+          <span class="subpx"><span></span><span></span><span></span></span>
+          <div><h2>Samsung Display</h2><div class="kr-src">삼성디스플레이 뉴스룸</div></div>
+        </div>
+        <a class="visit" href="https://news.samsungdisplay.com/" target="_blank" rel="noopener">SITE →</a>
+      </div>
+      <div class="panel-scroll"><ul class="item-list" id="list-samsung"><li class="skeleton"><div class="sk-line"></div><div class="sk-line"></div></li></ul></div>
+    </section>
+
+    <section class="panel" id="lg">
+      <div class="panel-head">
+        <div class="panel-title">
+          <span class="subpx"><span></span><span></span><span></span></span>
+          <div><h2>LG Display</h2><div class="kr-src">LG디스플레이 · 보도자료</div></div>
+        </div>
+        <a class="visit" href="https://www.lgdisplay.com/kor/company/media-center/latest-news" target="_blank" rel="noopener">SITE →</a>
+      </div>
+      <div class="panel-scroll"><ul class="item-list" id="list-lg"><li class="skeleton"><div class="sk-line"></div><div class="sk-line"></div></li></ul></div>
+    </section>
+  </div>
+
+  <footer>
+    <div><strong>자동 업데이트</strong> — GitHub Actions가 주기적으로 4개 소스를 다시 확인해 <code>data/news.json</code>을 갱신합니다. 이 페이지는 방문 시점의 최신 파일을 불러옵니다.</div>
+    <div><strong>참고</strong> — news.lgdisplay.com은 스크립트 렌더링 방식이라 공식 lgdisplay.com 보도자료 페이지를 대신 수집합니다.</div>
+  </footer>
+</div>
+
+<script>
+const SOURCE_META = {
+  ubi: { emptyMsg: "새로 수집된 기사가 없습니다." },
+  kdia: { emptyMsg: "새로 수집된 기사가 없습니다." },
+  samsung: { emptyMsg: "새로 수집된 기사가 없습니다." },
+  lg: { emptyMsg: "새로 수집된 기사가 없습니다." },
+};
+
+function escapeHtml(str){
+  const div = document.createElement('div');
+  div.textContent = str ?? '';
+  return div.innerHTML;
+}
+
+function renderItems(key, items){
+  const ul = document.getElementById('list-' + key);
+  if (!items || items.length === 0){
+    ul.innerHTML = `<li class="empty-state">${SOURCE_META[key].emptyMsg}</li>`;
+    return;
+  }
+  ul.innerHTML = items.map(it => `
+    <li class="item">
+      <a class="headline" href="${escapeHtml(it.url)}" target="_blank" rel="noopener">${escapeHtml(it.title)}</a>
+      ${it.desc ? `<div class="desc">${escapeHtml(it.desc)}</div>` : ''}
+      <div class="meta">
+        ${it.tag ? `<span class="tag">${escapeHtml(it.tag)}</span>` : ''}
+        ${it.date ? `<span>${escapeHtml(it.date)}</span>` : ''}
+      </div>
+    </li>
+  `).join('');
+}
+
+function renderError(key, message){
+  const ul = document.getElementById('list-' + key);
+  ul.innerHTML = `<li class="error-state">⚠ ${escapeHtml(message)}</li>`;
+}
+
+async function loadDashboard(){
+  try{
+    const res = await fetch('data/news.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) throw new Error('news.json을 불러올 수 없습니다 (' + res.status + ')');
+    const data = await res.json();
+
+    document.getElementById('stat-updated').textContent = data.generated_at_display || '—';
+
+    for (const key of ['ubi','kdia','samsung','lg']){
+      const src = data.sources && data.sources[key];
+      if (!src){ renderError(key, '데이터 없음'); continue; }
+      renderItems(key, src.items);
+    }
+  } catch (e){
+    for (const key of ['ubi','kdia','samsung','lg']) renderError(key, '불러오기 실패: ' + e.message);
+    document.getElementById('stat-updated').textContent = '오류';
+    console.error(e);
+  }
+}
+
+document.getElementById('refresh-btn').addEventListener('click', loadDashboard);
+loadDashboard();
+</script>
+</body>
+</html>
