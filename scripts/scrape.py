@@ -126,25 +126,54 @@ def scrape_kdia():
 # ---------------------------------------------------------------------------
 # 3) 삼성디스플레이 뉴스룸 — 상단 "최신 기사" 위젯의 앵커(/{숫자} 형태)
 # ---------------------------------------------------------------------------
+def _split_title_desc(text, max_title=55):
+    """제목/설명 class를 못 찾았을 때 쓰는 마지막 수단 분리 로직.
+    문장 끝(다./요./함./.) 뒤에서 자르고, 안 되면 max_title자에서 자른다."""
+    text = text.strip()
+    if len(text) <= max_title:
+        return text, ""
+    m = re.search(r"(.{10,%d}?[다요함\.])\s+(.+)" % max_title, text)
+    if m:
+        return m.group(1).strip(), m.group(2).strip()
+    return text[:max_title].rstrip() + "…", text[max_title:].strip()
+
+
 def scrape_samsung():
     soup = get_soup("https://news.samsungdisplay.com/")
     items = []
     seen = set()
+    debug_printed = False
 
     anchors = soup.find_all("a", href=re.compile(r"^https://news\.samsungdisplay\.com/\d+$"))
     for a in anchors:
         url = a["href"]
         if url in seen:
             continue
-        text = a.get_text(" ", strip=True)
-        if not text:
+
+        # 1순위: class명에 title/subject/headline 힌트가 있는 하위 요소
+        title_tag = a.find(class_=re.compile(r"(?i)(tit|subject|headline)"))
+        desc_tag = a.find(class_=re.compile(r"(?i)(desc|summary|txt|cont)"))
+
+        if title_tag and title_tag.get_text(strip=True):
+            title = title_tag.get_text(strip=True)
+            desc = desc_tag.get_text(strip=True) if desc_tag else ""
+        else:
+            # 2순위: 앵커 안의 heading 태그
+            heading = a.find(["h1", "h2", "h3", "h4", "strong"])
+            full_text = a.get_text(" ", strip=True)
+            if heading and heading.get_text(strip=True):
+                title = heading.get_text(strip=True)
+                desc = full_text.replace(title, "", 1).strip()
+            else:
+                # 3순위: 통짜 텍스트를 문장 단위로 분리
+                if not debug_printed:
+                    print(f"[DEBUG] samsung: class/heading 힌트 없음, 통짜 텍스트 사용 → {full_text[:120]!r}")
+                    debug_printed = True
+                title, desc = _split_title_desc(full_text)
+
+        if not title:
             continue
         seen.add(url)
-
-        # 첫 문장(또는 첫 30자 정도)을 제목으로, 나머지를 설명으로 근사 분리
-        title, desc = text, ""
-        m = re.match(r"^(.{5,60}?)(?<=[.가-힣])([A-Z가-힣].{20,})$", text)
-        # 위 정규식이 애매하면 그냥 통짜 텍스트를 제목으로 사용
         items.append({"title": title, "url": url, "date": "", "tag": "", "desc": desc})
         if len(items) >= MAX_ITEMS["samsung"]:
             break
@@ -156,24 +185,62 @@ def scrape_samsung():
 # 4) LG디스플레이 — news.lgdisplay.com은 JS 렌더링이라 스크래핑이 어려워
 #    공식 lgdisplay.com 보도자료(서버 렌더링) 페이지를 대신 사용한다.
 # ---------------------------------------------------------------------------
+def _clean_lg_title(text):
+    text = re.sub(r"\s*자세히\s*보기\s*$", "", text).strip()
+    return text
+
+
 def scrape_lg():
     soup = get_soup("https://www.lgdisplay.com/kor/company/media-center/latest-news")
     items = []
+    debug_printed = False
 
-    # "자세히보기" 링크가 각 게시물의 상세 링크
     for a in soup.find_all("a", string=re.compile("자세히보기")):
         url = a.get("href", "")
         if url.startswith("/"):
             url = "https://www.lgdisplay.com" + url
-        block = a.find_parent(["li", "div", "article"])
+
         title = ""
+
+        # 1순위: 링크 자체의 aria-label (흔한 접근성 패턴: "제목 자세히보기")
+        aria = a.get("aria-label", "")
+        if aria:
+            title = _clean_lg_title(aria)
+
+        block = a.find_parent(["li", "div", "article"])
         date_str = ""
         if block:
-            title_tag = block.find(["strong", "h3", "h4"])
-            title = title_tag.get_text(strip=True) if title_tag else ""
+            if not title:
+                # 2순위: 썸네일 이미지의 alt 속성에 제목이 들어있는 경우
+                img = block.find("img", alt=True)
+                if img and img.get("alt", "").strip():
+                    title = img["alt"].strip()
+
+            if not title:
+                # 3순위: 텍스트 태그를 폭넓게 탐색 (자세히보기 링크 자신은 제외)
+                for tag in block.find_all(["strong", "h2", "h3", "h4", "h5", "p", "span"]):
+                    if tag is a:
+                        continue
+                    txt = tag.get_text(strip=True)
+                    if txt and txt != "자세히보기" and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", txt) and len(txt) > 3:
+                        title = txt
+                        break
+
+            if not title:
+                # 4순위: 블록 전체 텍스트에서 날짜/버튼 문구를 제거하고 남은 텍스트 사용
+                full_text = block.get_text(" ", strip=True)
+                full_text = re.sub(r"\d{4}-\d{2}-\d{2}", "", full_text)
+                full_text = _clean_lg_title(full_text)
+                if full_text:
+                    title = full_text[:80]
+                if not debug_printed:
+                    print(f"[DEBUG] lg: class/alt 힌트 없음, 블록 전체 텍스트 사용 → {block.get_text(' ', strip=True)[:150]!r}")
+                    debug_printed = True
+
             m = re.search(r"\d{4}-\d{2}-\d{2}", block.get_text())
             if m:
                 date_str = m.group(0).replace("-", ".")
+
         if not title:
             continue
         items.append({"title": title, "url": url, "date": date_str, "tag": "PR", "desc": ""})
