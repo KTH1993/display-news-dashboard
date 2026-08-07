@@ -13,6 +13,7 @@
 import json
 import re
 import sys
+import time
 import traceback
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -25,8 +26,19 @@ HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
         "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-    )
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Referer": "https://www.google.com/",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "cross-site",
+    "Connection": "keep-alive",
 }
+SESSION = requests.Session()
+SESSION.headers.update(HEADERS)
 TIMEOUT = 20
 ROOT = Path(__file__).resolve().parent.parent
 JSON_PATH = ROOT / "data" / "news.json"
@@ -34,11 +46,21 @@ JSON_PATH = ROOT / "data" / "news.json"
 MAX_ITEMS = {"ubi": 6, "kdia": 10, "samsung": 5, "lg": 5}
 
 
-def get_soup(url, **kwargs):
-    resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT, **kwargs)
-    resp.raise_for_status()
-    resp.encoding = resp.apparent_encoding or resp.encoding
-    return BeautifulSoup(resp.text, "lxml")
+def get_soup(url, retries=2, **kwargs):
+    last_err = None
+    for attempt in range(retries):
+        try:
+            resp = SESSION.get(url, timeout=TIMEOUT, **kwargs)
+            resp.raise_for_status()
+            resp.encoding = resp.apparent_encoding or resp.encoding
+            return BeautifulSoup(resp.text, "lxml")
+        except requests.exceptions.HTTPError as e:
+            last_err = e
+            if attempt < retries - 1:
+                time.sleep(3)
+                continue
+            raise
+    raise last_err
 
 
 def load_existing():
@@ -201,6 +223,7 @@ def scrape_lg():
             url = "https://www.lgdisplay.com" + url
 
         title = ""
+        extra_desc = ""
 
         # 1순위: 링크 자체의 aria-label (흔한 접근성 패턴: "제목 자세히보기")
         aria = a.get("aria-label", "")
@@ -232,7 +255,7 @@ def scrape_lg():
                 full_text = re.sub(r"\d{4}-\d{2}-\d{2}", "", full_text)
                 full_text = _clean_lg_title(full_text)
                 if full_text:
-                    title = full_text[:80]
+                    title, extra_desc = _split_title_desc(full_text, max_title=60)
                 if not debug_printed:
                     print(f"[DEBUG] lg: class/alt 힌트 없음, 블록 전체 텍스트 사용 → {block.get_text(' ', strip=True)[:150]!r}")
                     debug_printed = True
@@ -243,7 +266,7 @@ def scrape_lg():
 
         if not title:
             continue
-        items.append({"title": title, "url": url, "date": date_str, "tag": "PR", "desc": ""})
+        items.append({"title": title, "url": url, "date": date_str, "tag": "PR", "desc": extra_desc})
         if len(items) >= MAX_ITEMS["lg"]:
             break
 
