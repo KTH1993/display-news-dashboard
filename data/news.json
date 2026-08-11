@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-11T17:41:51.621204+09:00",
-  "generated_at_display": "2026.08.11 17:41 KST",
+  "generated_at": "2026-08-11T21:36:44.001288+09:00",
+  "generated_at_display": "2026.08.11 21:36 KST",
   "sources": {
     "ubi": {
       "name": "유비리서치넷",
@@ -124,6 +124,13 @@
       "url": "https://news.samsungdisplay.com/",
       "items": [
         {
+          "title": "'DisplayHDR™ True Black 1400' 인증 - 삼성 OLED, 노트북 디스플레이의 새로운 기준을 세우다!",
+          "url": "https://news.samsungdisplay.com/34511",
+          "date": "",
+          "tag": "",
+          "desc": "최근 삼성디스플레이가 VESA의 'DisplayHDR™ True Black 1400' 기준을 충족하는 노트북용 탠덤 OLED를 본격적으로 출시했는데요. 한층 향상된 휘도 성능을 갖춘 노트북용 OLED를 앞세워 글로벌 PC 제조업체들과 협력하며 프리미엄 노트북 시장을 적극 공략할 계획인데요. 그렇다면 'DisplayHDR™ True Black 1400'은 어떤 인증이며, 어떤 기준으로 디스플레이의 HDR 성능을 평가하는지 함께 알아보겠습니다."
+        },
+        {
           "title": "갤럭시 Z 폴드8·폴드8 울트라, 더 얇고 더 단단하게! 한층 강력해진 삼성 폴더블 OLED",
           "url": "https://news.samsungdisplay.com/34510",
           "date": "",
@@ -136,13 +143,6 @@
           "date": "",
           "tag": "",
           "desc": "액티브 에어리어(Active Area)는 디스플레이에서 실제로 이미지가 표시되는 영역을 의미합니다. 이 영역은 수많은 픽셀로 구성돼 있으며 빛을 내어 화면을 표현하는 유효 표시 영역인데요. 우리가 디스플레이의 크기를 이야기할 때는 이런 액티브 에어리어의 대각선 길이를 기준으로 합니다."
-        },
-        {
-          "title": "삼성D, 차세대 폼팩터부터 미래차∙AI∙게이밍 아우르는 OLED 혁신 선보인다",
-          "url": "https://news.samsungdisplay.com/34500",
-          "date": "",
-          "tag": "",
-          "desc": "삼성디스플레이가 22일부터 24일까지 사흘간 'Beyond Screens, into intelligent Display'를 주제로 서울 코엑스(COEX)에서 열리는 한국디스플레이산업전시회('K-디스플레이 2026')'에 참가한다. 이번 전시에서 삼성디스플레이는 HIAA(Hole in Active Area) 기술로 완성한 '멀티홀 디스플레이'와 CID(Center Information Display)로 탄생한 세로형 슬라이더블 등 자유로운 차량 인테리어를 가능하게 하는 최고 수준의 폼팩터 기술력을 일반에 선보인다."
         }
       ]
     },
