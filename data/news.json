@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-27T01:40:13.694740+09:00",
-  "generated_at_display": "2026.08.27 01:40 KST",
+  "generated_at": "2026-08-27T07:33:10.792813+09:00",
+  "generated_at_display": "2026.08.27 07:33 KST",
   "sources": {
     "ubi": {
       "name": "유비리서치넷",
@@ -124,6 +124,13 @@
       "url": "https://news.samsungdisplay.com/",
       "items": [
         {
+          "title": "삼성D, '게임스컴 2026' 기대작에 QD-OLED 몰입감 더한다",
+          "url": "https://news.samsungdisplay.com/34516",
+          "date": "",
+          "tag": "",
+          "desc": "삼성디스플레이가 세계 최대 게임 전시회 '게임스컴(gamescom) 2026'에서 글로벌 게임사와 협업해 QD-OLED의 차별화된 게이밍 성능을 알린다. 특히 e스포츠 및 1인칭 슈팅(FPSFirst-Person Shooter) 게임에 최적화된 24.5형 QD-OLED의 연내 양산 계획도 밝히며 게이밍용 모니터 시장 내 기술 리더십을 강조했다."
+        },
+        {
           "title": "삼성D, 제네시스 GV90에 OLED 공급… 미래 럭셔리 모빌리티 경험 완성",
           "url": "https://news.samsungdisplay.com/34515",
           "date": "",
@@ -136,13 +143,6 @@
           "date": "",
           "tag": "",
           "desc": "삼성디스플레이가 18일부터 21일까지 나흘간 'Lightcrafting the Future'를 주제로 부산 벡스코(BEXCO)에서 열리는 제26회 국제정보디스플레이학술대회(International Meeting on Information Display, 이하 'IMID 2026')에 참가한다."
-        },
-        {
-          "title": "'DisplayHDR™ True Black 1400' 인증 - 삼성 OLED, 노트북 디스플레이의 새로운 기준을 세우다!",
-          "url": "https://news.samsungdisplay.com/34511",
-          "date": "",
-          "tag": "",
-          "desc": "최근 삼성디스플레이가 VESA의 'DisplayHDR™ True Black 1400' 기준을 충족하는 노트북용 탠덤 OLED를 본격적으로 출시했는데요. 한층 향상된 휘도 성능을 갖춘 노트북용 OLED를 앞세워 글로벌 PC 제조업체들과 협력하며 프리미엄 노트북 시장을 적극 공략할 계획인데요. 그렇다면 'DisplayHDR™ True Black 1400'은 어떤 인증이며, 어떤 기준으로 디스플레이의 HDR 성능을 평가하는지 함께 알아보겠습니다."
         }
       ]
     },
