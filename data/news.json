@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-27T14:22:59.193538+09:00",
-  "generated_at_display": "2026.08.27 14:22 KST",
+  "generated_at": "2026-08-28T03:27:18.444748+09:00",
+  "generated_at_display": "2026.08.28 03:27 KST",
   "sources": {
     "ubi": {
       "name": "유비리서치넷",
@@ -124,6 +124,13 @@
       "url": "https://news.samsungdisplay.com/",
       "items": [
         {
+          "title": "Gamescom 2026 QUEST, 게임 부스에 숨겨진 삼성디스플레이 QD-OLED를 찾아보세요!",
+          "url": "https://news.samsungdisplay.com/34517",
+          "date": "",
+          "tag": "",
+          "desc": "게임 부스 속 QD-OLED를 찾아라! 캡콤, 크래프톤, CD 프로젝트 레드 부스 곳곳에 숨어 있는 QD-OLED를 찾고, 선명한 화질과 빠른 응답 속도, 뛰어난 몰입감을 직접 확인해 보세요. 캡콤 부스에서는 20여 년 만에 돌아온 ‘귀무자’ 시리즈의 신작 ‘귀무자: 검의 길’과 확장 타이틀 ‘드래곤즈 도그마 2: 다크 어리즌’을 출시 전 미리 체험할 수 있습니다. 검극 액션과 역동적인 전투가 돋보이는 기대작을 에브니아·기가바이트·MSI의 QD-OLED 게이밍 모니터(Hint)로 즐길 수 있는데요. 빠르게 전환되는 전투와 화려한 이펙트를 더욱 선명하게 표현해 액션의 속도감과 몰입감을 높여줍니다."
+        },
+        {
           "title": "삼성D, '게임스컴 2026' 기대작에 QD-OLED 몰입감 더한다",
           "url": "https://news.samsungdisplay.com/34516",
           "date": "",
@@ -136,13 +143,6 @@
           "date": "",
           "tag": "",
           "desc": "삼성디스플레이가 제네시스의 초대형 플래그십 전동화 SUV 'GV90'에 2종의 OLED를 공급하며 프리미엄 차량용 디스플레이 시장 공략을 강화한다. 특히 24.6형 삼성 OLED가 탑재된 시네마틱 디스플레이에는 상황에 따라 화면 크기를 바꿀 수 있는 팝업 방식이 적용됐다."
-        },
-        {
-          "title": "삼성D, 'IMID 2026'서 폴더블 화질 혁신할 최신 광시야각 기술 첫 선",
-          "url": "https://news.samsungdisplay.com/34512",
-          "date": "",
-          "tag": "",
-          "desc": "삼성디스플레이가 18일부터 21일까지 나흘간 'Lightcrafting the Future'를 주제로 부산 벡스코(BEXCO)에서 열리는 제26회 국제정보디스플레이학술대회(International Meeting on Information Display, 이하 'IMID 2026')에 참가한다."
         }
       ]
     },
