@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-08T10:42:29.933010+09:00",
-  "generated_at_display": "2026.09.08 10:42 KST",
+  "generated_at": "2026-09-08T17:23:10.437913+09:00",
+  "generated_at_display": "2026.09.08 17:23 KST",
   "sources": {
     "ubi": {
       "name": "유비리서치넷",
@@ -124,11 +124,11 @@
       "url": "https://news.samsungdisplay.com/",
       "items": [
         {
-          "title": "삼성디스플레이 2026년 하반기 3급 신입사원 채용",
-          "url": "https://news.samsungdisplay.com/34525",
+          "title": "[디스플레이 용어.zip] EP.45 : 블랙 매트릭스 (BM)",
+          "url": "https://news.samsungdisplay.com/34526",
           "date": "",
           "tag": "",
-          "desc": "삼성디스플레이가 2026년 하반기 3급 신입사원을 선발합니다. 최첨단 디스플레이를 개발하고, 디스플레이의 미래를 함께 펼쳐나갈 우수한 인재들의 도전을 기다리고 있습니다. 삼성디스플레이에서 여러분의 꿈과 미래를 펼쳐보세요! 지원서 작성: https://www.samsungcareers.com/"
+          "desc": "BM(Black Matrix)은 디스플레이에서 R,G,B 서브픽셀 사이의 경계를 구분하는 검은색 차광 영역입니다. 주로 불필요한 빛을 차단하고 인접 화소 간의 빛이 섞이는 것을 방지해 색 순도와 명암비를 높이는 역할을 합니다. LCD에서 BM은 컬러 필터 공정의 핵심 요소입니다. 백라이트의 빛이 화소 사이로 새는 '빛샘 현상'을 방지하고, 외부광에 의해 TFT의 누설전류가 증가하는 것을 막아줍니다."
         },
         {
           "title": "Gamescom 2026 QUEST, 게임 부스에 숨겨진 삼성디스플레이 QD-OLED를 찾아보세요!",
