@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-11T08:00:47.288654+09:00",
-  "generated_at_display": "2026.10.11 08:00 KST",
+  "generated_at": "2026-10-11T11:30:40.213482+09:00",
+  "generated_at_display": "2026.10.11 11:30 KST",
   "sources": {
     "ubi": {
       "name": "유비리서치넷",
@@ -48,71 +48,71 @@
       "url": "https://www.kdia.org/bbs/bbsList.jsp?mgrId=64",
       "items": [
         {
+          "title": "[EBN] 삼성전자, LED 사업 손땐다…전력 반도체·마이크로 LED 집중",
+          "url": "https://news.nate.com/view/20241011n05891?mid=n1101",
+          "date": "2026.10.11",
+          "tag": "",
+          "desc": ""
+        },
+        {
+          "title": "[매경이코노미] OLED·전장 부품 전문 ‘35년 LG 협력사’ [문지민 기자]",
+          "url": "https://n.news.naver.com/mnews/article/024/0000092097?sid=101",
+          "date": "2026.10.11",
+          "tag": "",
+          "desc": ""
+        },
+        {
+          "title": "[뉴시스] 애플 아이패드 예상밖 부진…K-디스플레이 업계 영향은? [이인준 기자]",
+          "url": "https://n.news.naver.com/mnews/article/003/0012830253?sid=101",
+          "date": "2026.10.11",
+          "tag": "",
+          "desc": ""
+        },
+        {
+          "title": "[전자신문] APS, 병점 광장에 \"LED 미디어월\" 구축 [임중권 기자]",
+          "url": "https://n.news.naver.com/mnews/article/030/0003246182?sid=105",
+          "date": "2026.10.11",
+          "tag": "",
+          "desc": ""
+        },
+        {
+          "title": "[서울경제] 반도체·디스플레이 소재 제조 기업 獨 머크 연구소 안성에 둥지 [손대선 기자]",
+          "url": "https://n.news.naver.com/mnews/article/011/0004401187?sid=102",
+          "date": "2026.10.11",
+          "tag": "",
+          "desc": ""
+        },
+        {
+          "title": "[조선비즈] LG전자, 6년내 B2B 사업 매출 10조원 달성… “새 캐시카우로 키운다” [황민규 기자]",
+          "url": "https://n.news.naver.com/mnews/article/366/0001023078?sid=105",
+          "date": "2026.10.11",
+          "tag": "",
+          "desc": ""
+        },
+        {
+          "title": "[디지털데일리] 메타 부사장 \"AI는 근본기술, 투자 불가피...\" 수익보단 \"미래\" 본다 [이건한 기자]",
+          "url": "https://n.news.naver.com/mnews/article/138/0002184112?sid=105",
+          "date": "2026.10.11",
+          "tag": "",
+          "desc": ""
+        },
+        {
+          "title": "[연합뉴스] 무협 \"작년 간접수출액 비중 37.7%로 역대 최고…역할 늘려야\" [이슬기 기자]",
+          "url": "https://n.news.naver.com/mnews/article/001/0014974409?sid=101",
+          "date": "2026.10.11",
+          "tag": "",
+          "desc": ""
+        },
+        {
+          "title": "[매일경제] “美 제조업 추월한 中, 이젠 10년내 첨단 기술·군사 제조 잡는다” [송광섭 기자]",
+          "url": "https://n.news.naver.com/mnews/article/009/0005376889?sid=101",
+          "date": "2026.10.11",
+          "tag": "",
+          "desc": ""
+        },
+        {
           "title": "[연합뉴스] 아이폰17 흥행에 OLED 출하량 급증…LGD 전분기의 2배 [김민지 기자]",
           "url": "https://n.news.naver.com/mnews/article/001/0015663829?sid=101",
-          "date": "2026.10.10",
-          "tag": "",
-          "desc": ""
-        },
-        {
-          "title": "[디일렉] \"올해 모니터용 OLED 60.9% 성장...대형 패널 출하 견인\" [정일주 기자]",
-          "url": "https://www.thelec.kr/news/articleView.html?idxno=41867",
-          "date": "2026.10.10",
-          "tag": "",
-          "desc": ""
-        },
-        {
-          "title": "[머니투데이] 3년 뒤면 중국이 韓 생산 능력 \"추월\"…8.6세대 OLED가 승부처 [최지은 기자]",
-          "url": "https://n.news.naver.com/mnews/article/008/0005259728?sid=101",
-          "date": "2026.10.10",
-          "tag": "",
-          "desc": ""
-        },
-        {
-          "title": "[아시아경제] \"디스플레이 강국의 민낯…액정·컬러필터 국산화율 0%\" [박준이 기자]",
-          "url": "https://n.news.naver.com/mnews/article/277/0005662041?sid=101",
-          "date": "2026.10.10",
-          "tag": "",
-          "desc": ""
-        },
-        {
-          "title": "[머니투데이] \"스마트폰에 노트북까지\" 판커진 OLED…삼성·LGD, 기회 온다 [김남이 기자]",
-          "url": "https://n.news.naver.com/mnews/article/008/0005260448?sid=101",
-          "date": "2026.10.10",
-          "tag": "",
-          "desc": ""
-        },
-        {
-          "title": "[서울경제] 반도체·디스플레이 기술 中에 또 털렸다…연이은 기술 유출에 \"골머리\" [노우리 기자]",
-          "url": "https://n.news.naver.com/mnews/article/011/0004541346?sid=101",
-          "date": "2026.10.10",
-          "tag": "",
-          "desc": ""
-        },
-        {
-          "title": "[글로벌이코노믹] 삼성디스플레이, 애플 첫 폴더블 아이폰 OLED 독점 공급 [박정한 기자]",
-          "url": "https://www.g-enews.com/view.php?ud=202510080748115256fbbec65dfb_1",
-          "date": "2026.10.10",
-          "tag": "",
-          "desc": ""
-        },
-        {
-          "title": "[딜사이트] 車 UDC 나서는 삼성D 셈법 \"복잡\"…BOE 소송 우려 [김주연 기자]",
-          "url": "https://dealsite.co.kr/articles/149027",
-          "date": "2026.10.10",
-          "tag": "",
-          "desc": ""
-        },
-        {
-          "title": "[뉴스핌] \"다음은 비행기\"…LG디스플레이, 보잉과 항공 OLED 시장 공략 [김아영 기자]",
-          "url": "https://www.newspim.com/news/view/20251002000858",
-          "date": "2026.10.10",
-          "tag": "",
-          "desc": ""
-        },
-        {
-          "title": "[더구루] 의료용 디스플레이 시장, 2032년 40억4000만 달러 예상 [김예지 기자]",
-          "url": "https://www.theguru.co.kr/news/article.html?no=92406",
           "date": "2026.10.10",
           "tag": "",
           "desc": ""
